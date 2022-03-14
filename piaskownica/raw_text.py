@@ -49,12 +49,22 @@ def domain_counter(urls):
 
     return counter
 
+def char_counter(urls):
+    counter = 0
+    for i in urls:
+        if 'a' in i:
+            counter += 1
+
+    return counter
+
 
 text = web_to_txt(url)
 list = links_to_list(text)
+char_a = char_counter(list)
 
 for i in list:
     print(i)
 
 print(link_counter(list))
 print(domain_counter(list))
+print(char_a)
